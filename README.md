@@ -17,6 +17,11 @@ En este post vamos a explicar:
 - Instalar todo lo necesario para continuar con proyecto
 - commits y push and pull del proyecto (como debe ser las subidas y bajadas de codigo)
 
+
+# Crear Repositorio en Github
+
+Para crear un repositorio en github, es necesario que se registren en la pagina [Github](https://github.com)
+
 You can use the [editor on GitHub](https://github.com/luisplata/github-unity3d/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
