@@ -1,4 +1,15 @@
-## Welcome to GitHub Pages
+# Utilizar github para nuestro proyecto unity 3D
+
+En este post vamos a explicar:
+
+- Crear un repositorio en github
+- Iniciar repositorio a nuestro proyecto unity 3D
+- Realizar el commit inicial
+- Realizar el push a nuestro repositorio
+- Flujo de trabajo en solitario
+- Clonar repositorio
+- Instalar todo lo necesario para continuar con proyecto
+- commits y push and pull del proyecto (como debe ser las subidas y bajadas de codigo)
 
 You can use the [editor on GitHub](https://github.com/luisplata/github-unity3d/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
