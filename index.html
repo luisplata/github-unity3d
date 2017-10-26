@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Unity + Github</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<style>
+		.wrapper.spotlight:nth-child(2n - 1) .inner{
+			text-align:left;
+		}
+		.imagen-paso {
+				width:100%;
+		}
+		</style>
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<div class="logo"><span class="icon fa-code-fork"></span></div>
+							<h2>Unity + Github</h2>
+							<p>Tutoria de como utilizar github para tu proyecto unity y poder colaborar a otros proyectos alojados en Github</p>
+						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+							<section id="one" class="wrapper spotlight style3">
+								<div class="inner">
+									<div class="content">
+										<h2>Temario</h2>
+										<ul>
+											<li>CREAR REPOSITORIO EN GITHUB</li>
+											<li>INICIAR REPOSITORIO A NUESTRO PROYECTO UNITY 3D</li>
+											<li>IGNORAR DATOS INNECESARIOS</li>
+											<li>REALIZAR EL COMMIT INICIAL</li>
+											<li>REALIZAR EL PUSH A NUESTRO REPOSITORIO</li>
+											<li>INSTALAR TODO LO NECESARIO PARA CONTINUAR CON PROYECTO</li>
+										</ul>
+									</div>
+								</div>
+							</section>
+						<!-- One -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<div class="content">
+										<h2 class="major">Crear Repositorio en Github</h2>
+										<p>Para crear un repositorio en github es necesario iniciar sesión o registrarse para iniciar sesión</p>
+										
+										<img class="imagen-paso" src="images/1.png">
+										
+										<p>Después de auntenticanos nos vamos a nuestro perfil.</p>
+										<img class="imagen-paso" src="images/2.png">
+										<p>Estando en nuestro perfil vamos a la pestaña de Repositories del menú de Github</p>
+										<img class="imagen-paso" src="images/3.png">
+										<p>Estando aquí, solo deben hacer clic en el botón New ubicado en la parte derecha debajo del menú del perfil.</p>
+										<img class="imagen-paso" src="images/4.png">
+										<p>Lo cual nos pide un nombre de repositorio y opcionalmente una descripción.<br/>Para el nombre del 
+										repositorio recomiendo colocar un nombre bastante explicito. Para poder diferenciarlo de otro repositorios. 
+										Adicional a eso acostumbrarse a colocar al final de un repositorio Unity “-unity” para que el buscador de
+										github pueda mostrarlo en las búsquedas.</p>
+										<img class="imagen-paso" src="images/5.png">
+										<p>Solo llenamos lo que es el nombre y si queremos la descripción.<br/>
+										Y hacemos clic en Create repository.<br/>
+										Con esto nos muestra la pantalla inicial de nuestro repositorio. El cual nos muestra los primeros pasos. 
+										Y el que nos interesa es la combinación de la creación del repositorio y el de pushear un repositorio 
+										existente.</p>
+									</div>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<div class="content">
+										<h2 class="major">Iniciar repositorio a nuestro proyecto Unity 3D</h2>
+										<p>Para iniciar nuestro repositorio debemos hacer unas configuraciones a nuestro proyecto de Unity para 
+										que pueda ser visionado.<br/>
+										Primero vamos a: <b>Edit -> Project Settings -> Editor </b></p>
+										<img class="imagen-paso" src="images/6.png">
+										<p>Aquí vamos a configurar el modo de versión de control y seleccionamos la de Visible <i>Meta File</i></p>
+										<img class="imagen-paso" src="images/7.png">
+										<p>lo siguiente es editar el Asset Serialization a <i>Force Test</i></p>
+										<img class="imagen-paso" src="images/8.png">
+										<p>Guardamos la Escena y con esto terminamos la configuración de Unity para comenzar a versionar.<br/>
+										Ahora lo importante iniciar el sistema de versionado, esto lo hacemos con:</p>
+										<pre>
+										<code>git init</code>
+										</pre>
+									</div>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<div class="content">
+										<h2 class="major">Ignorar datos innecesarios</h2>
+										<p>Para ignorar datos innecesarios como archivos temporales o archivos o sistemas 
+										de archivos que usa Unity utilizamos el archivo de GitIgnore. Para crear el archivo 
+										<b>.gitignore</b> hay varias formas:</p>
+										<ul class="alt">
+											<li>LINUX<code>touch .gitignore</code></li>
+											<li>Windows<code>COPY CON .gitignore</code> después pulsar la combinación de teclas <code>Ctr + Z</code></li>
+											<li>Mac (supongo que igual que Linux, no tengo mac ☼)</li>
+										</ul>
+										<p>Después de crear el archivo <b>.gitignore</b> es necesario modificarlo para adicionar los directorios 
+										que no deseamos subir a nuestro repositorio remoto.<br/>
+										En el siguiente Script coloco todo lo necesario, es Genérico para cualquier proyecto. Pero pueden modificarlo 
+										por si desean algo mas personalizado. <br/>
+										Lo importante es subir las carpetas de:</p>
+										<ul>
+											<li>Assets</li>
+											<li>Proyect_Data</li>
+											<li>ProjectSettings</li>
+										</ul>
+										<pre>
+										<code>[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+
+# Autogenerated VS/MD solution and project files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+
+# Unity3D generated meta files
+*.pidb.meta
+
+# Unity3D Generated File On Crash Reports
+sysinfo.txt</code>
+										</pre>
+									</div>
+								</div>
+							</section>
+
+						<!-- Four -->
+							<section id="four" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">Realizar el <i>commit</i> inicial</h2>
+									<p>Este primer commit vamos a adicionar todos los cambios en el proyecto y hacer un commit de dichos cambios. 
+									Si desea saber mas sobre como funcionan los commit, recomiendo ir a la pagina oficial de GIT y leer un poco de 
+									ello.</p>
+									<p>Para realizar el commit es necesario antes adicionar todos los cambios con:</P>
+									<pre><code>git add .</code></pre>
+									<p>Donde <b>“.”</b> indicamos que son todos los archivos que fueron modificados. Para mas información de como 
+									se usa 
+									<code>git add</code> recomiendo usar <code>git add –-help</code> para que arroje información de como se usa.</p>
+									<p>Después de adicionar todos los cambio, ahora si realizamos el <i>commit</i> con:</p>
+									<pre>
+									<code>git commit -m “Este es un mensaje para decir en pocas palabras que se hizo en las modificaciones realizadas. Por favor sean específicos. El futuro se los agradecerá”</code>
+									</pre>
+									<p>Con esto <i>“versionamos”</i> nuestro proyecto.</p>
+								</div>
+							</section>
+							
+							
+						<!-- Five -->
+							<section id="four" class="wrapper alt style2">
+								<div class="inner">
+									<h2 class="major">Realizar el <i>push</i> a nuestro repositorio</h2>
+									<p>Para realizar el push a nuestro repositorio remoto es necesario adicionar dicho repositorio remoto, ya que 
+									hasta ahora los cambios solo se harán de forma local.<br/>
+									Para eso, en la pagina del repositorio inicial nos indica como adicionar el repositorio remoto y pushear.</p>
+									<img class="imagen-paso" src="images/9.png">
+									<p>Ese es en mi caso. Pero estoy seguro que cada uno tendrá su propio nombre único. Eso lo remplazan por el de
+									su repositorio.</p>
+									<p>Y eso lo escribios en nuestra linea de comandos</p>
+									<pre>
+									<code>git remote add origin [url_a_tu_repositorio]</code>
+									</pre>
+									<p>Y como ya hicimos el <i>commit</i> solo nos queda <i>pushear</i></p>
+									<pre>
+									<code>git push -u origin master</code>
+									</pre>
+									<p>Con este comando, garantizamos que para próximas pusheadas solo sea necesario <code>git push</code> para 
+									subir los cambios.</p>
+								</div>
+							</section>
+							
+						
+						<!-- Five -->
+							<section id="four" class="wrapper alt style3">
+								<div class="inner">
+									<h2 class="major">Clonar repositorio</h2>
+									<p>Para clonar un repositorio solo es necesario escribir el siguiente comando</p>
+									<pre>
+									<code>git clone [url_del_repositorio_remoto]</code>
+									</pre>
+									<img class="imagen-paso" src="images/10.png">
+									<p>Una vez clonado tendremos una carpeta con el nombre del repositorio y los archivos en el.</p>
+									<img class="imagen-paso" src="images/11.png">
+									<p>Estos son lo bajados del repositorio personal.</p>
+								</div>
+							</section>
+							
+							
+						<!-- Six-->
+							<section id="four" class="wrapper alt style4">
+								<div class="inner">
+									<h2 class="major">Instalar todo lo necesario para continuar con proyecto</h2>
+									<p>Para instalar el proyecto en tu Unity realizamos los siguientes pasos</p>
+									<h3>1. Abrimos Unity</h3>
+									<img class="imagen-paso" src="images/12.png">
+									<h3>2. En el Laucher seleccionamos Open</h3>
+									<img class="imagen-paso" src="images/13.png">
+									<h3>3. Buscamos la carpeta donde clonamos el repositorio, En mi caso mi carpeta se llama “pato”</h3>
+									<img class="imagen-paso" src="images/14.png">
+									<h3>4. Seleccionamos la carpeta y Unity comenzará a incluir los paquetes necesarios</h3>
+									<img class="imagen-paso" src="images/15.png">
+									<h3>5. Se abre Unity con nuestro proyecto.</h3>
+									<img class="imagen-paso" src="images/16.png">
+									<h3>6. Solo queda abrir nuestra escena y continuar con el trabajo.</h3>
+									<img class="imagen-paso" src="images/17.png">
+									<img class="imagen-paso" src="images/18.png">
+									<img class="imagen-paso" src="images/19.png">
+									<h3>7. Continuar con el trabajo</h3>
+								</div>
+							</section>
+					</section>
+					
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Quien soy?</h2>
+							<p>
+							<a href="https://luisplata.github.io" target="_blank"><span class="image left"><img class="image" src="https://luisplata.github.io/images/luisplata.jpg"></span></a>
+							Soy <a href="https://luisplata.github.io" target="_blank">Luis Enrique Plata Osorio</a>, Ingeniero de Sistemas, desarrollador de software. Apacionado por los videojuegos y su industria.<br/><br/>
+							Seguidor del Software Libre y el Open Source.
+							<br/><br/>
+							<a href="https://github.com/luisplata" target="_blank" class="icon fa-github"><span class=""> Github</span></a>
+							<br/>
+							<a href="https://www.facebook.com/peryloth" target="_blank" class="icon fa-facebook"><span class="">  Facebook</span></a>
+							<br/>
+							<a href="https://twitter.com/PeryLoth" target="_blank" class="icon fa-twitter"><span class=""> Twitter</span></a>
+							<br/>
+							<a href="https://www.instagram.com/peryloth/" target="_blank" class="icon fa-instagram"><span class=""> Instagram</span></a>
+							</p>
+							
+							<ul class="copyright">
+								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
